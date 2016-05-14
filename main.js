@@ -8,6 +8,8 @@
     },
   };
 
+  var BUTTON_TEXTS = ['Fuck you', 'Shut up', 'Go away'];
+
   $(function() {
     addButtons();
     setInterval(addButtons, 1000);
@@ -25,7 +27,7 @@
       var donateToCandidate = isPoliticalPost($this.text());
       if (donateToCandidate) {
         var $button = $('<div>').addClass('stupid__donate-button')
-            .text('Fuck you')
+            .text(getRandomButtonText())
             .data('candidate', donateToCandidate);
         $this.prepend($button).addClass('stupid__donate-button-added');
       }
@@ -48,5 +50,9 @@
       }
     }
     return null;
+  }
+
+  function getRandomButtonText() {
+    return BUTTON_TEXTS[Math.floor(Math.random() * BUTTON_TEXTS.length - 1)];
   }
 })();
