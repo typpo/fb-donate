@@ -24,7 +24,9 @@
 
       var donateToCandidate = isPoliticalPost($this.text());
       if (donateToCandidate) {
-        var $button = $('<div>').addClass('stupid__donate-button').text(donateToCandidate);
+        var $button = $('<div>').addClass('stupid__donate-button')
+            .text('Fuck you')
+            .data('candidate', donateToCandidate);
         $this.prepend($button).addClass('stupid__donate-button-added');
       }
     });

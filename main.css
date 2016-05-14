@@ -19,7 +19,7 @@
 .stupid__donate-button:hover {
   /* background-color: #F95B5B; */
 
-  -webkit-box-shadow: 0 4px 3px -3px black;
-  -moz-box-shadow: 0 4px 3px -3px black;
-  box-shadow: 0 4px 3px -3px black;
+  -webkit-box-shadow: 0 10px 8px -8px black;
+  -moz-box-shadow: 0 10px 8px -8px black;
+  box-shadow: 0 10px 8px -8px black;
 }
