@@ -10,8 +10,16 @@
   cursor: pointer;
 
   font-weight: bold;
+
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 .stupid__donate-button:hover {
   background-color: #F95B5B;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
