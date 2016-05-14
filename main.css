@@ -17,9 +17,9 @@
 }
 
 .stupid__donate-button:hover {
-  background-color: #F95B5B;
+  /* background-color: #F95B5B; */
 
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+  -webkit-box-shadow: 0 4px 3px -3px black;
+  -moz-box-shadow: 0 4px 3px -3px black;
+  box-shadow: 0 4px 3px -3px black;
 }
