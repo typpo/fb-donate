@@ -1,4 +1,6 @@
 (function() {
+  'use strict';
+
   var DONATION_MAP = {
     'trump': {
       'matchAgainst': ['hillary', 'clinton', 'bernie', 'sanders'],
@@ -13,7 +15,7 @@
   $(function() {
     var stripeHandler = setupStripe();
     addButtons(stripeHandler);
-    setInterval(addButtons, 1000);
+    setInterval(addButtons.bind(this, stripeHandler), 1000);
   });
 
   function addButtons(stripeHandler) {
@@ -66,7 +68,7 @@
   }
 
   function setupStripe() {
-    stripeHandler = StripeCheckout.configure({
+    return StripeCheckout.configure({
       key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
       image: 'https://i.imgur.com/b0aT98ym.jpg',
       locale: 'auto',
@@ -75,7 +77,6 @@
         // Get the token ID to your server-side code for use.
       }
     });
-    return stripeHandler;
   }
 
   function capitalize(s) {
