@@ -3,4 +3,15 @@
   width: 100px;
   height: 50px;
   float: right;
+
+  color: white;
+  text-align: center;
+  line-height: 4.2;
+  cursor: pointer;
+
+  font-weight: bold;
+}
+
+.stupid__donate-button:hover {
+  background-color: #F95B5B;
 }
