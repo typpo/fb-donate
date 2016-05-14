@@ -13,6 +13,7 @@
       ],
       "js": [
         "jquery.js",
+        "checkout.js",
         "main.js"
       ],
       "css": [

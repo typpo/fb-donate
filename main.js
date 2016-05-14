@@ -8,14 +8,15 @@
     },
   };
 
-  var BUTTON_TEXTS = ['Fuck you', 'Shut up', 'Go away'];
+  var BUTTON_TEXTS = ['Fuck you', 'Stop it', 'Please stop'];
 
   $(function() {
-    addButtons();
+    var stripeHandler = setupStripe();
+    addButtons(stripeHandler);
     setInterval(addButtons, 1000);
   });
 
-  function addButtons() {
+  function addButtons(stripeHandler) {
     $('.userContentWrapper').not('.stupid__donate-button-added').each(function() {
       var $this = $(this);
 
@@ -30,7 +31,12 @@
             .text(getRandomButtonText())
             .data('candidate', donateToCandidate)
             .on('click', function() {
-              alert('Ok.');
+              stripeHandler.open({
+                name: 'Donate to ' + capitalize(donateToCandidate),
+                description: '',
+                amount: 100,
+              });
+              return false;
             });
         $this.prepend($button).addClass('stupid__donate-button-added');
       }
@@ -57,5 +63,22 @@
 
   function getRandomButtonText() {
     return BUTTON_TEXTS[Math.floor(Math.random() * BUTTON_TEXTS.length)];
+  }
+
+  function setupStripe() {
+    stripeHandler = StripeCheckout.configure({
+      key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+      image: 'https://i.imgur.com/b0aT98ym.jpg',
+      locale: 'auto',
+      token: function(token) {
+        // You can access the token ID with `token.id`.
+        // Get the token ID to your server-side code for use.
+      }
+    });
+    return stripeHandler;
+  }
+
+  function capitalize(s) {
+    return s[0].toUpperCase() + s.slice(1);
   }
 })();
