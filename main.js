@@ -28,7 +28,10 @@
       if (donateToCandidate) {
         var $button = $('<div>').addClass('stupid__donate-button')
             .text(getRandomButtonText())
-            .data('candidate', donateToCandidate);
+            .data('candidate', donateToCandidate)
+            .on('click', function() {
+              alert('Ok.');
+            });
         $this.prepend($button).addClass('stupid__donate-button-added');
       }
     });
@@ -53,6 +56,6 @@
   }
 
   function getRandomButtonText() {
-    return BUTTON_TEXTS[Math.floor(Math.random() * BUTTON_TEXTS.length - 1)];
+    return BUTTON_TEXTS[Math.floor(Math.random() * BUTTON_TEXTS.length)];
   }
 })();
