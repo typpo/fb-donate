@@ -12,7 +12,11 @@
         "*://*.facebook.com/*"
       ],
       "js": [
+        "jquery.js",
         "main.js"
+      ],
+      "css": [
+        "main.css"
       ]
     }
   ]
